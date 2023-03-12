@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'pizzaria.ui'
+# Form implementation generated from reading ui file 'c:\secao2\pizzaria.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.2
 #
@@ -43,8 +43,8 @@ class Ui_Form(object):
         self.label_3.setFont(font)
         self.label_3.setObjectName("label_3")
         self.checkBox_1 = QtWidgets.QCheckBox(parent=Form)
-        self.checkBox_1	.setGeometry(QtCore.QRect(520, 170, 81, 20))
-        self.checkBox_1.setObjectName("checkBox")
+        self.checkBox_1.setGeometry(QtCore.QRect(520, 170, 81, 20))
+        self.checkBox_1.setObjectName("checkBox_1")
         self.checkBox_2 = QtWidgets.QCheckBox(parent=Form)
         self.checkBox_2.setGeometry(QtCore.QRect(520, 210, 81, 20))
         self.checkBox_2.setObjectName("checkBox_2")
@@ -55,48 +55,15 @@ class Ui_Form(object):
         self.checkBox_4.setGeometry(QtCore.QRect(520, 290, 81, 20))
         self.checkBox_4.setObjectName("checkBox_4")
         self.label_final = QtWidgets.QLabel(parent=Form)
-        self.label_final.setGeometry(QtCore.QRect(190, 350, 301, 16))
+        self.label_final.setGeometry(QtCore.QRect(190, 346, 301, 16))
         self.label_final.setText("")
         self.label_final.setObjectName("label_final")
-        self.pushButton = QtWidgets.QPushButton(Form,clicked = lambda:self.btn_clicked())
+        self.pushButton = QtWidgets.QPushButton(parent=Form)
         self.pushButton.setGeometry(QtCore.QRect(60, 340, 93, 28))
         self.pushButton.setObjectName("pushButton")
 
-
-        self.radioButton_1.toggled.connect(self.radio_selected)
-        self.radioButton_2.toggled.connect(self.radio_selected)
-        self.radioButton_3.toggled.connect(self.radio_selected)
-        self.checkBox_1.setChecked(True)
-
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
-
-    def radio_selected(self):
-        radio =''
-        if self.radioButton_1.isChecked():
-            self.radio = self.radioButton_1.text()
-        if self.radioButton_2.isChecked():
-            self.radio = self.radioButton_2.text()
-        if self.radioButton_3.isChecked():
-            self.radio = self.checkBox_3.text()
-
-    def btn_clicked(self):
-        check1 = ''
-        check2 = ''
-        check3 = ''
-        check4 = ''
-        if self.checkBox_1.isChecked():
-            check1 = self.checkBox_1.text()
-        if self.checkBox_2.isChecked():
-            check2 = self.checkBox_2.text()
-        if self.checkBox_3.isChecked():
-            check3 = self.checkBox_3.text()
-        if self.checkBox_4.isChecked():
-            check4 = self.checkBox_4.text()
-        self.label_final.setText(f'Pizza sabor: {self.radio}, Adicionais: {check1+" "+check2+" "+check3+" "+check4}') 
-
-            
-
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -112,13 +79,3 @@ class Ui_Form(object):
         self.checkBox_3.setText(_translate("Form", "Palmito"))
         self.checkBox_4.setText(_translate("Form", "Milho"))
         self.pushButton.setText(_translate("Form", "Salvar/Enviar"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Form = QtWidgets.QWidget()
-    ui = Ui_Form()
-    ui.setupUi(Form)
-    Form.show()
-    sys.exit(app.exec())
